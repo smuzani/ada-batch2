@@ -8,10 +8,7 @@
 </head>
 <body>
   Account Name:
-  <select name="acountName">
-    <option value="TNB">Tenaga Nasional Berhad</option>
-    <option value="Astro">Astro</option>
-  </select>
+  <input type="text" name="accountName" value="">
 
   <br>
 
@@ -21,16 +18,24 @@
   <br>
 
   Due Date:
-  <input type="date" name="" value="date">
+  <input type="date" name="dueDate" value="date">
 
   <br>
 
   Bill No:
+  <input type="text" name="billNo" value="">
+
+  <br>
 
   Account No:
+  <input type="text" name="accountNo" value="">
+  <br>
 
   Frequency:
-  <input type="text" name="" value="">
+  <select class="" name="frequency">
+    <option value="monthly">Monthly</option>
+    <option value="yearly">Yearly</option>
+  </select>
 
   <br>
 
@@ -40,5 +45,10 @@
     <option value="2">Medium</option>
     <option value="1">Low</option>
   </select>
+
+
+  <br>
+  <input type="submit" value="submit">
+
 </body>
 </html>
