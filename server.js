@@ -86,7 +86,7 @@ router.route('/billcrud/:id')
 router.route('/billcrud/:id') 
   .delete(function(req, res) {
       Bill.remove({
-      id: req.params.id
+      _id: req.params.id
       }, function(err, bill) {
         if (err)
           res.send(err);
