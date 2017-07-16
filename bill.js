@@ -1,4 +1,5 @@
 var express = require('express');
+var moment = require('moment');
 var router = express.Router();
 
 
@@ -8,3 +9,5 @@ res.json({ message: 'Hooray! Good Paymaster From Now!' });
 
 module.exports = router;
 
+moment().format('YYYY MM DD');
+moment().fromNow();
