@@ -19,95 +19,114 @@
 </head>
 <body>
 
-<h1>Add / Delete Bills Form</h1>
-<div class="col-sm-12">
-<form class="form-horizontal">
-  <div class="form-group">
-    <label for="inputName3" class="col-sm-2 control-label">Your Name</label>
-    <div class="col-sm-3">
-      <input type="Name" class="form-control" id="inputName3" placeholder="Your Name">
-    </div>
+  <div class="jumbotron" style="text-align: center;">
+       <h1>Add / Delete Bills here</h1>
+       <p>Always forgot to pay  your bills..??</p>
+       <p>Spend 80% less time approving and paying bills on our Platform.</p>
   </div>
-  
-</form>
 
 <!-- <form class="form-horizontal"> -->
+<div class="container">
   <div class="form-group">
-    <label for="inputBillName3" class="col-sm-2 control-label">Bill Name</label>
-    <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Bills Name
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">TNB</a></li>
-    <li><a href="#">UNIFI / TM </a></li>
-    <li><a href="#">DIGI</a></li>
-    <li><a href="#">MAXIS</a></li>
-    <li><a href="#">UMOBILE</a></li>
-    <li><a href="#">SYABAS</a></li>
-    <li><a href="#">CREDIT CARD</a></li>
-    <li><a href="#">HOUSING LOAN</a></li>
-    <li><a href="#">CAR LOAN</a></li>
-    <li><a href="#">ROOM RENTAL</a></li>
-  </ul>
-
+    <label for="billName" class="col-sm-2 col-form-label">Bill Name</label>
+    <div class="col-sm-4">
+    <select class="form-control" id="billName">
+      <option>TNB</option>
+      <option>UNIFI / TM </option>
+      <option>DIGI</option>
+      <option>MAXIS</option>
+      <option>UMOBILE</option>
+      <option>SYABAS</option>
+      <option>CREDIT CARD</option>
+      <option>HOUSING LOAN</option>
+      <option>CAR LOAN</option>
+      <option>ROOM RENTAL</option>
+    </select>
+    </div>
+  </div>
+</div>
  <!--  <form class="form-inline"> -->
-  <div class="col-xs-2">
+  <div class="form-group">
+  <div class="col-md-6">
     <label class="sr-only" for="exampleInputAmount">Amount</label>
-    <div class="input-group">
-      <div class="input-group-addon">(RM)</div>
-      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
-      <div class="input-group-addon">.00</div>
-   
+      <div class="input-group">
+        <div class="input-group-addon">(RM)</div>
+        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+        <div class="input-group-addon">.00</div>
+      </div>
+  </div>
   </div>
 
-</div>
-
-<!-- <form class="form-horizontal"> -->
+  <!-- Due Date -->
+  <div class="row">
   <div class="form-group">
-    <label for="inputAccountNumber3" class="col-sm-2 control-label">Your Account Number</label>
-    <div class="col-sm-2">
-      <input type="text" class="form-control" id="inputAccountNumber3" placeholder="Account Number">
+    <label for="dueDate" class="col-sm-2 col-form-label">Due Date</label>
+    <div class="col-sm-4">
+    <input class="form-control" type="date" value="2011-08-19" id="dueDate">
     </div>
   </div>
-  
-</form>
-</div>
-
-
-</div><br>
-
-<!-- <form class="form-horizontal"> -->
-  <div class="form-group">
-    <label for="inputFrequency3" class="col-sm-2 control-label">Bill Freqency</label>
-    <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Monthly / Yearly
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Monthly</a></li>
-    <li><a href="#">Yearly</a></li>
-  <form class="form-inline">
-
-<!-- </form> -->
-  </ul>
-<br>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Priority
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">High</a></li>
-    <li><a href="#">Medium</a></li>
-    <li><a href="#">Low</a></li>
-  </ul>
-</div>
-
-
-</div>
   </div>
-<button type="button" class="btn btn-success">Submit</button>
+
+  <!-- Bill No -->
+  <div class="row">
+  <div class="form-group">
+      <label for="billNo" class="col-sm-2 col-form-label">Bill No</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="billNo" placeholder="Your Bill No">
+      </div>
+  </div>
+  </div>
+
+  <!-- Account No -->
+  <div class="row">
+  <div class="form-group">
+      <label for="accountNo" class="col-sm-2 col-form-label">Account No</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="accountNo" placeholder="Your Acccount No">
+      </div>
+  </div>
+  </div>
+
+<div class="container">
+  <!-- frequency -->
+  <div class="row">
+
+    <label for="frequency" class="col-sm-2 col-form-label">Frequency</label>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+
+      <select class="form-control" id="frequency">
+        <option>Monthly</option>
+        <option>Yearly</option>
+      </select>
+
+    </div>
+  </div>
+
+  <!-- Priority -->
+    <div class="row">
+    <label for="priority" class="col-sm-2 col-form-label">Priority</label>
+    </div>
+
+    <div class="row">
+    <div class="col-sm-4">
+      <select class="form-control" id="priority">
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+      </select>
+    </div>
+    </div>
+</div>
+  <!-- button -->
+  <button type="button" class="btn btn-success">Submit</button>
   <button type="button" class="btn btn-danger">Reset / Delete</button>
 </form>
 
-</div>
+
 
 
 </body>
