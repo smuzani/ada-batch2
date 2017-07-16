@@ -11,20 +11,37 @@ module.exports = router;
 
 var Bill = require ('./billschema.js');
 
-router.route('/bills')
-.post(function(req, res) {
-var bill = new Bill();
-bill.name = req.body.name;
-bill.amount = req.body.amount;
-bill.datedue = req.body.datedue;
-book.save(function(err) {
-if (err)
-res.send(err);
-res.json({ message: 'Bill created!' });
-});
-});
+router.route('/bill')   
+ .post(function(req, res) {
+      var bill = new Bill();
+      bill.Name = req.body.Name;
+      bill.Amount = req.body.Amount;
+      bill.DateDue= req.body.DateDue;
+      bill.BillNo= req.body.BillNo; 
+      bill.AcctNo= req.body.AcctNo;    
+      bill.Frequency= req.body.Frequency;     
+      bill.Priority= req.body.Priority;      
+      bill.IsPaid= req.body.IsPaid; 
 
-router.route ('/bills')
+      bill.save(function(err) {      
+             if (err)   
+             res.send(err);
+        res.json({ message: 'Bill created!' 
+        }); 
+      }); 
+  });
+ 
+ router.route('/bill')   
+  .get(function(req, res) {
+      Bill.find(function(err, bill) {
+          if (err)                
+              res.send(err);            
+              res.json(bill);        
+      });    
+  });
+
+
+router.route ('/bill')
 .get(function(req,res){
 	var timestamp = req.params.start;
 	if (moment(timestamp).isValid()){
@@ -46,10 +63,48 @@ router.route ('/bills')
 	
 
 Bill.find ({
-	datedue: {$gte:start,$lte:end}
-}).exec (function (err,bills){
+	DateDue: {$gte:start,$lte:end}
+}).exec (function (err,bill){
 	if (err)
 	res.send(err);
-	res.json(bills);
+	res.json(bill);
 });
 });
+
+
+router.route('/bill/:id')  
+ .post(function(req, res) {        
+      Bill.findById(req.params.id, function(err, bill) {       
+      if (err)                
+        res.send(err);            
+      
+      bill.Name = req.body.Name;
+      bill.Amount = req.body.Amount;
+      bill.DateDue= req.body.DateDue;
+      bill.BillNo= req.body.BillNo; 
+      bill.AcctNo= req.body.AcctNo;    
+      bill.Frequency= req.body.Frequency;     
+      bill.Priority= req.body.Priority;      
+      bill.IsPaid= req.body.IsPaid;         
+
+      bill.save(function(err) {                
+        if (err)                    
+          res.send(err);                
+        res.json({ message: 'Bill updated!' 
+        });            
+      });        
+    });    
+  })
+
+
+
+router.route('/bill/:id') 
+  .delete(function(req, res) {
+      Bill.remove({
+      _id: req.params.id
+      }, function(err, bill) {
+        if (err)
+          res.send(err);
+          res.json({ message: 'Successfully deleted' });
+      });
+  });
