@@ -1,0 +1,18 @@
+Core features:
+* Add their bills to the system, on a certain date
+* View the bills on the system
+-- Within a certain range (e.g. next 5 years, next week)
+* Edit existing bills on system (CRUD)
+
+Nice to have:
+* Priority
+* Print bills
+* Login
+* Sum of bills in a certain period
+* Paying the bill online
+* Schedule recurring bill (every month/year)
+* Reminders
+-- Set the time/date
+-- A week before due
+-- Notification (email, SMS)
+* Integration with company APIs, pull your bills from a system
