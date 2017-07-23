@@ -21,14 +21,12 @@ function deleteItem(){
 
 });
 
-function newitem () {
-	var name = "";
-	var dueDate = "";
-	var text = '<td>1</td><td>' + name + '</td><td>'+ dueDate + '</td><td>RM10</td><td>High</td><td><button type="button"  class="btn btn-pencil" aria-label="Left Align"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button><button type="button" class="btn btn-trash" aria-label="Left Align"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>'
-	for (var i = list.length - 1; i >= 0; i--) {
-		$().HTML += text;
-	}
+function newitem (json) {
+	var name = json.Name;
+	var dueDate = json.DueDate;
+	var amount =json.Amount;
+	var priority = json.Priority;
+	var text = '<td>1</td><td>' + name + '</td><td>'+ dueDate + '</td><td>' +amount+'</td><td>' + priority +'</td><td><button type="button"  class="btn btn-pencil" aria-label="Left Align"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button><button type="button" class="btn btn-trash" aria-label="Left Align"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>'
+	return text;
 }
-
-
 
