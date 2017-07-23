@@ -11,19 +11,20 @@ $(document).ready(function(){
 function (json,status){
   for (i=0; i<json.length; i++){ 
     document.getElementById ("myTable").innerHTML += newitem(json[i]);
-  	$("#delete").click(deleteItem)
+  	$("#delete").click({id:json[i]._id},deleteItem)
        
   }
 });
 });	
 
-function deleteItem(){
+function deleteItem(event){
 	alert('Confirm delete bill?')
 	$.ajax({
-    url: 'http://localhost:8000/bill/:id',
+    url: 'http://localhost:8080/bill/'+event.data.id,
     type: 'DELETE',
-    success: function(){
+    success: function(data){
     	alert('Bill deleted');
+    	console.log(data);
     },
     error: function(){
     	alert('Error');
