@@ -8,6 +8,8 @@
 
 
 $(document).ready(function(){
+  var url = "http://localhost:8080";
+  var endpoint = url + "/bill";
   $.getJSON(endpoint,
 function (json,status){
   for (i=0; i<json.length; i++){ 
