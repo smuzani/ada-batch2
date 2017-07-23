@@ -6,14 +6,14 @@
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js"></script>
 <script type="text/javascript">
 var url = "localhost:8080";
-var endpoint = url + "/api";
+var endpoint = url + "/bill";
 
 $(document).ready(function(){
   $.getJSON(endpoint,
 function (json,status){
   for (i=0; i<json.length; i++){
          document.getElementById("name").innerHTML +=json[i].Name ;
-          document.getElementById("due.date").innerHTML +=json[i].DateDue;
+          document.getElementById("due.date").innerHTML +=json[i].DueDate;
           document.getElementById("amount").innerHTML +=json[i].Amount;
           document.getElementById("priority").innerHTML +=json[i].Priority;
   }
