@@ -16,7 +16,7 @@ router.route('/bill')
       var bill = new Bill();
       bill.Name = req.body.Name;
       bill.Amount = req.body.Amount;
-      bill.DateDue= req.body.DateDue;
+      bill.DueDate= req.body.DueDate;
       bill.BillNo= req.body.BillNo; 
       bill.AcctNo= req.body.AcctNo;    
       bill.Frequency= req.body.Frequency;     
@@ -63,7 +63,7 @@ router.route ('/bill')
 	
 
 Bill.find ({
-	DateDue: {$gte:start,$lte:end}
+	DueDate: {$gte:start,$lte:end}
 }).exec (function (err,bill){
 	if (err)
 	res.send(err);
@@ -80,7 +80,7 @@ router.route('/bill/:id')
       
       bill.Name = req.body.Name;
       bill.Amount = req.body.Amount;
-      bill.DateDue= req.body.DateDue;
+      bill.DueDate= req.body.DueDate;
       bill.BillNo= req.body.BillNo; 
       bill.AcctNo= req.body.AcctNo;    
       bill.Frequency= req.body.Frequency;     

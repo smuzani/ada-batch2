@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var BillSchema = new Schema({
 Name: String,
 Amount: Number,
-DateDue: Date,
+DueDate: Date,
 Bill_No: String,
 Acct_No: String,
 Frequency:Number,
