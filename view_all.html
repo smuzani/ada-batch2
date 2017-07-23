@@ -12,8 +12,7 @@ $(document).ready(function(){
   $.getJSON(endpoint,
 function (json,status){
   for (i=0; i<json.length; i++){ 
-    document.getElementById ("myTable").innerHTML += newitem(json[i]);
-        
+    document.getElementById ("myTable").innerHTML += newitem(json[i]);     
   }
 });
 });
@@ -64,7 +63,7 @@ function (json,status){
       <div class="row">
           <div class='col-md-3'>
               <div class="form-group">
-              <button type="button" class="btn btn-plus" id="add" aria-label="Left Align" onclick="insertRow(this)"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              <button type="button" class="btn btn-plus" id="add" aria-label="Right Align" onclick="insertRow(this)"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               </button>
               </div>
           </div>
@@ -83,7 +82,6 @@ function (json,status){
                 <th></th>
               </tr>
             </thead>
-
           </table>
         </div>
       </div>
